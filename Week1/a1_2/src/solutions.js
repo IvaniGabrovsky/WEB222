@@ -8,9 +8,9 @@
  *
  * Please update the following with your information:
  *
- *      Name: <YOUR_NAME>
+ *      Name: Ivan Gabrovsky
  *      Student ID: <YOUR_STUDENT_ID>
- *      Date: <SUBMISSION_DATE>
+ *      Date: 01/23/2021
  *
  * Please see all unit tests in the files problem-00.test.js, problem-01.test.js, etc.
  */
@@ -105,7 +105,7 @@
  ******************************************************************************/
 
 function greeting(name) {
-  return `Hello ${name}`;
+  return `Hello ${name}!`;
 }
 
 /*******************************************************************************
@@ -131,7 +131,13 @@ function greeting(name) {
  ******************************************************************************/
 
 function kebab(value) {
-  // Replace this comment with your code...
+  var returnString = value.trim();
+  returnString = returnString.toUpperCase();
+  returnString = returnString.split(' ').join('-');
+  returnString = returnString.split('\t').join('-');
+  returnString = returnString.split('--').join('-');
+  returnString = returnString.replace(/[.-]+/g, '-');
+  return returnString;
 }
 
 /*******************************************************************************
