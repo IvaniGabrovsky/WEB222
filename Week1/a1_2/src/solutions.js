@@ -310,7 +310,11 @@ function toDateString(value) {
  ******************************************************************************/
 
 function validateCoord(lat, lng) {
-  
+  if (lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /*******************************************************************************
@@ -344,7 +348,13 @@ function validateCoord(lat, lng) {
  ******************************************************************************/
 
 function formatCoord(lat, lng, includeBrackets) {
-  // Replace this comment with your code...
+  if (!validateCoord(lat, lng)) {
+    throw 'invalid coordinate';
+  }
+  if (includeBrackets) {
+    return `[${lat},${lng}]`;
+  }
+  return `${lat},${lng}`;
 }
 
 /*******************************************************************************
@@ -372,7 +382,15 @@ function formatCoord(lat, lng, includeBrackets) {
  ******************************************************************************/
 
 function formatCoords(...values) {
-  // Replace this comment with your code...
+  var arrayValues = Array.from(values);
+  if (arrayValues.length % 2 !== 0) {
+    throw 'invalid number of arguments';
+  }
+  var arr = [];
+  for (var i = 0; i < arrayValues.length; i += 2) {
+    arr.push(formatCoord(arrayValues[i], arrayValues[i + 1], true));
+  }
+  return `[${arr.join(', ')}]`;
 }
 
 /*******************************************************************************
