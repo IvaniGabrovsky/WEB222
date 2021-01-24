@@ -199,7 +199,10 @@ function kebab(value) {
  ******************************************************************************/
 
 function createImg(src, alt, width) {
-  // Replace this comment with your code...
+  if (width && parseInt(width)) {
+    return `<img src="${src.trim()}" alt="${alt.trim()}" width="${width}">`;
+  }
+  return `<img src="${src.trim()}" alt="${alt.trim()}">`;
 }
 
 /*******************************************************************************
@@ -239,7 +242,11 @@ function createImg(src, alt, width) {
  ******************************************************************************/
 
 function parseDateString(value) {
-  // Replace this comment with your code...
+  if (!/\d{4}-\d{2}-\d{2}/.test(value)) {
+    throw 'invalid format';
+  }
+  var arrayDate = value.split('-');
+  return new Date(arrayDate[0], arrayDate[2] - 1, arrayDate[1]);
 }
 
 /*******************************************************************************
@@ -265,7 +272,20 @@ function parseDateString(value) {
  ******************************************************************************/
 
 function toDateString(value) {
-  // Replace this comment with your code...
+  var year = `${value.getFullYear()}`;
+  var day;
+  if (value.getDate() < 10) {
+    day = '0' + value.getDate();
+  } else {
+    day = value.getDate();
+  }
+  var month;
+  if (value.getMonth() < 9) {
+    month = '0' + (value.getMonth() + 1);
+  } else {
+    month = value.getMonth() + 1;
+  }
+  return `${year}-${day}-${month}`;
 }
 
 /*******************************************************************************
@@ -290,7 +310,7 @@ function toDateString(value) {
  ******************************************************************************/
 
 function validateCoord(lat, lng) {
-  // Replace this comment with your code...
+  
 }
 
 /*******************************************************************************
