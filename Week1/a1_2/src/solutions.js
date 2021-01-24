@@ -312,9 +312,8 @@ function toDateString(value) {
 function validateCoord(lat, lng) {
   if (lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 /*******************************************************************************
@@ -438,9 +437,70 @@ function formatCoords(...values) {
  * @param {string} filename - a filename
  * @returns {string}
  ******************************************************************************/
-
+// index.html
 function mimeFromFilename(filename) {
-  // Replace this comment with your code...
+  var mimetype = '';
+  var dotIndex = filename.lastIndexOf('.');
+  var fileExtension = filename.substr(dotIndex);
+  switch (fileExtension) {
+    case '.html':
+    case '.htm':
+      mimetype = 'text/html';
+      break;
+    case '.css':
+      mimetype = 'text/css';
+      break;
+    case '.js':
+      mimetype = 'text/javascript';
+      break;
+    case '.jpg':
+    case '.jpeg':
+      mimetype = 'image/jpeg';
+      break;
+    case '.gif':
+      mimetype = 'image/gif';
+      break;
+    case '.bmp':
+      mimetype = 'image/bmp';
+      break;
+    case '.ico':
+    case '.cur':
+      mimetype = 'image/x-icon';
+      break;
+    case '.png':
+      mimetype = 'image/png';
+      break;
+    case '.svg':
+      mimetype = 'image/svg+xml';
+      break;
+    case '.webp':
+      mimetype = 'image/webp';
+      break;
+    case '.mp3':
+      mimetype = 'audio/mp3';
+      break;
+    case '.wav':
+      mimetype = 'audio/wav';
+      break;
+    case '.mp4':
+      mimetype = 'video/mp4';
+      break;
+    case '.webm':
+      mimetype = 'video/webm';
+      break;
+    case '.json':
+      mimetype = 'application/json';
+      break;
+    case '.exe':
+    case '.dll':
+    case '.xht':
+    case '.m':
+      mimetype = 'application/octet-stream';
+      break;
+    default:
+      mimetype = 'application/octet-stream';
+  }
+  return mimetype;
 }
 
 /*******************************************************************************
@@ -488,7 +548,38 @@ function mimeFromFilename(filename) {
  ******************************************************************************/
 
 function generateLicenseLink(licenseCode) {
-  // Replace this comment with your code...
+  var link;
+  var text;
+  switch (licenseCode) {
+    case 'CC-BY':
+      link = 'https://creativecommons.org/licenses/by/4.0/';
+      text = 'Creative Commons Attribution License';
+      break;
+    case 'CC-BY-NC':
+      link = 'https://creativecommons.org/licenses/by-nc/4.0/';
+      text = 'Creative Commons Attribution-NonCommercial License';
+      break;
+    case 'CC-BY-SA':
+      link = 'https://creativecommons.org/licenses/by-sa/4.0/';
+      text = 'Creative Commons Attribution-ShareAlike License';
+      break;
+    case 'CC-BY-ND':
+      link = 'https://creativecommons.org/licenses/by-nd/4.0/';
+      text = 'Creative Commons Attribution-NoDerivs License';
+      break;
+    case 'CC-BY-NC-SA':
+      link = 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
+      text = 'Creative Commons Attribution-NonCommercial-ShareAlike License';
+      break;
+    case 'CC-BY-NC-ND':
+      link = 'https://creativecommons.org/licenses/by-nc-nd/4.0/';
+      text = 'Creative Commons Attribution-NonCommercial-NoDerivs License';
+      break;
+    default:
+      link = 'https://choosealicense.com/no-permission/';
+      text = 'All Rights Reserved';
+  }
+  return `<a href="${link}">${text}</a>`;
 }
 
 /*******************************************************************************
@@ -511,7 +602,32 @@ function generateLicenseLink(licenseCode) {
  ******************************************************************************/
 
 function pureBool(value) {
-  // Replace this comment with your code...
+  if (typeof value === 'boolean') {
+    return value;
+  }
+  if (value === -1) {
+    return false;
+  }
+  if (value === 1) {
+    return true;
+  }
+  if (!value) {
+    return false;
+  }
+  switch (value.toUpperCase()) {
+    case 'YES':
+    case 'Y':
+    case 'TRUE':
+    case 'T':
+      return true;
+    case 'NO':
+    case 'N':
+    case 'FALSE':
+    case 'F':
+      return false;
+    default:
+  }
+  throw 'invalid boolean value';
 }
 
 /*******************************************************************************
@@ -533,11 +649,13 @@ function pureBool(value) {
  ******************************************************************************/
 
 function all() {
-  // Replace this comment with your code...
+  var argumentsArray = Array.from(arguments);
+  return argumentsArray.every((arrayElement) => pureBool(arrayElement));
 }
 
 function none() {
-  // Replace this comment with your code...
+  var argumentsArray = Array.from(arguments);
+  return argumentsArray.every((arrayElement) => !pureBool(arrayElement));
 }
 
 /*******************************************************************************
@@ -606,7 +724,35 @@ function none() {
  ******************************************************************************/
 
 function buildUrl(q, perPage, order, license, lat, lng) {
-  // Replace this comment with your code...
+  if (!validateCoord(lat, lng)) {
+    throw 'invalid coordinates';
+  }
+  if (perPage < 1 || perPage > 200) {
+    throw 'incorrect number of pages';
+  }
+  if (order !== 'asc' && order !== 'desc') {
+    throw 'incorrect order';
+  }
+  var supportedLicenses = [
+    'none',
+    'any',
+    'cc-by',
+    'cc-by-nc',
+    'cc-by-sa',
+    'cc-by-nd',
+    'cc-by-nc-sa',
+    'cc-by-nc-nd'
+  ];
+  if (!supportedLicenses.includes(license)) {
+    throw 'incorrect license';
+  }
+  var qParam = q ? 'q=' + q : '';
+  var perPageParam = perPage ? 'per_page=' + perPage : '';
+  var orderParam = order ? 'order=' + order : '';
+  var licenseParam = license ? 'license=' + license : '';
+  var latParam = lat ? 'lat=' + lat : '';
+  var lngParam = lng ? 'lng=' + lng : '';
+  return `https://api.inaturalist.org/v1/observations?${qParam}&${perPageParam}&${orderParam}&${licenseParam}&${latParam}&${lngParam}`;
 }
 
 // Our unit test files need to access the functions we defined
