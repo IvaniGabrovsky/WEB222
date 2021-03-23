@@ -1,7 +1,10 @@
 /* For instructions, go to index.html */
+@import url(https://fonts.googleapis.com/css?family=Roboto); 
+
 body{
     padding: 0;
     margin: 0;
+    font-family: "Roboto";
 }
 
 nav {
@@ -12,32 +15,81 @@ nav {
     left: 0;
     background-color: #0e0f0f;
     color: white;
-}
-
-div{
-    
+    padding: 10px;
 }
 
 header{
     background-color: #343638;
     /*width: 100%;*/
-    margin: 0;
-    padding: 50px 0;
-    height: 200px;
+    margin: 20 0;
+    padding: 140px 0 30px 0;
+    min-height: 200px;
     
 }
 
 h1{
-    font-size: 4em;
+    font-size: 3.5em;
     color: #4390de;
     text-align: center;
+    margin: 0 0;
 }
 
 h3{
     color: #faffff;
+    font-size: 1.2em;
+    text-align: center;
 }
 
-.centered{
-    width: 500px;
-    margin: 0 auto;
+a{
+    padding: 0 10px;
+    text-decoration: none;
+    color: #faffff;
+    font-size: 1.2em;
 }
+
+button{
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    background-color: #4390de;
+}
+
+
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centered-block{
+    /* width: 500px;
+    margin: 0 auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.centered-inline{
+    /* width: 500px;
+    margin: 0 auto; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.header-link{
+    color: #4390de;
+    justify-content: center;
+}
+
+
+
+/*.vertical-centered{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}*/
