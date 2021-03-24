@@ -128,7 +128,10 @@ footer{
 }
 
 .two-colons{
-    display: block;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 1.8em;
+    width: 50%;
 }
 
 /*.vertical-centered{
