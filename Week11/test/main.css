@@ -1,2 +1,16 @@
 /* For instructions, go to index.html */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+}
+
+.centered-block{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
