@@ -11,13 +11,19 @@ h1{
     font-size: 1.8em;
     color: black;
     text-align: center;
-    margin: 0 0;
+    margin: 0 0 10px 0;
 }
 
-.box-size{
+.textbox-size{
     height:40px;
     width:100%;
-    margin: 10px 0;
+    margin: 5px 0;
+}
+
+.checkbox-size{
+    height:20px;
+    width:20px;
+    margin: 5px 0;
 }
 
 .centered-block{
@@ -28,4 +34,13 @@ h1{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.checkbox-block{
+    /* margin: 20px 0; */
+    width: 500px;
+    margin: 24px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
