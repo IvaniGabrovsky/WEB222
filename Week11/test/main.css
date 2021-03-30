@@ -5,6 +5,7 @@ body{
     padding: 0;
     margin: 0;
     font-family: "Roboto";
+    color: #6b6868;
 }
 
 h1{
@@ -14,16 +15,44 @@ h1{
     margin: 0 0 10px 0;
 }
 
+h4{
+    font-size: 1.2em;
+    /* color: black; */
+    text-align: left;
+    margin: 10px 0 0 0;
+}
+
+p{
+    font-size: 0.8em;
+    text-align: justify;
+    margin: 3.5px;
+}
+
+a{
+    margin-top: 10px;
+    color: #6b6868;
+    font-size: 1.3em;
+}
+
+footer{
+    height: 250px;
+    background-color: #dfdddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .textbox-size{
     height:40px;
     width:100%;
     margin: 5px 0;
 }
 
-.checkbox-size{
-    height:20px;
-    width:20px;
-    margin: 5px 0;
+.checkbox{
+    height:40px;
+    width:40px;
+    margin: 5px 10px 0 0;
 }
 
 .centered-block{
@@ -36,13 +65,40 @@ h1{
     align-items: center;
 }
 
-.checkbox-block{
-    /* margin: 20px 0; */
-    width: 500px;
-    margin: 24px auto;
+.centered-inline{
+    margin: 20px 0;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.checkbox-block{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.bold{
+    font-weight: bold;
+    color: black;
+}
+
+.spaces{
+    word-spacing: 5px;
+}
+
+.button{
+    height:40px;
+    width:100%;
+    margin: 5px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6b6868;
 }
 
 
