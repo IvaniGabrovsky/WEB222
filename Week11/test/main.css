@@ -17,6 +17,7 @@ h1{
 .box-size{
     height:40px;
     width:400px;
+    margin:5px;
 }
 
 .centered-block{
