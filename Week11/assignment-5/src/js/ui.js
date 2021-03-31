@@ -36,6 +36,14 @@ function clearAllTableRows() {
   }
 }
 
+// Remove all content from the grid id=observation-data
+function clearAllCards() {
+  var grid = document.querySelector("#observation-data");
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+}
+
 // Creates and returns new table row <tr> element with the specified id value.
 function createTableRow(id) {
   var tr = document.createElement("tr");
@@ -187,12 +195,13 @@ function buildCardForObservation(observation) {
   var div = document.createElement('div');
   div.setAttribute('class', 'card');
   div.setAttribute('id', '60706122');
-  var img = cardImg(url);
-  var body = cardBody(name, date, uri, wikipediaUrl);
-  var icons = cardIcons(isNative, isIntroduced, isThreatened, isEndangered);
+  var img = cardImg(observation.uri);
+  var body = cardBody(observation.name, observation.date, observation.uri, observation.wikipediaUrl);
+  var icons = cardIcons(observation.isNative, observation.isIntroduced, observation.isThreatened, observation.isEndangered);
   div.appendChild(img);
   div.appendChild(body);
   div.appendChild(icons);
+  return div;
 }
 
 /*
@@ -266,4 +275,5 @@ function cardIcons(isNative, isIntroduced, isThreatened, isEndangered){
     i.setAttribute('title', isEndangered);
   }
   div.appendChild(i);
+  return div;
 }
