@@ -50,6 +50,17 @@ span{
   padding-right: 5px;
 }
 
+#observation-data{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card{
+  /* margin: 10px; */
+}
+
 .card-img{
   width: 375px;
   height: 375px;
