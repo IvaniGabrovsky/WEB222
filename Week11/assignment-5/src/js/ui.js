@@ -8,6 +8,15 @@ function updateTableTitle(title) {
   tableTitle.appendChild(textNode);
 }
 
+function updateCardsTitle(title) {
+  var tableTitle = document.querySelector("#cards-title");
+  while (tableTitle.firstChild) {
+    tableTitle.removeChild(tableTitle.firstChild);
+  }
+  var textNode = document.createTextNode(title);
+  tableTitle.appendChild(textNode);
+}
+
 // Add the given <tr>...</tr> element to the table body element with id=rows
 function addRowToTable(row) {
   var rows = document.querySelector("#rows");
