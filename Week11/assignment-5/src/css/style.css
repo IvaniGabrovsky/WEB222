@@ -40,6 +40,16 @@
   background-color: lightblue;
 }
 
+#legend{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+span{
+  padding-right: 5px;
+}
+
 td {
   vertical-align: middle;
 }
