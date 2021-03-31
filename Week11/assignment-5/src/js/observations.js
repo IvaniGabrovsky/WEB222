@@ -122,6 +122,10 @@ function transformObservations(observations) {
       isIntroduced: observation.taxon.introduced,
       isEndangered: observation.taxon.extinct,
       isThreatened: observation.taxon.threatened,
+      squareUrl:
+        observation.taxon &&
+        observation.taxon.default_photo &&
+        observation.taxon.default_photo.square_url,
     };
   });
 }

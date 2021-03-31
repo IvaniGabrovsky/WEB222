@@ -50,6 +50,12 @@ span{
   padding-right: 5px;
 }
 
+.card-img{
+  width: 375px;
+  height: 375px;
+  background-repeat: no-repeat;
+}
+
 td {
   vertical-align: middle;
 }

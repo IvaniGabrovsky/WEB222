@@ -195,7 +195,7 @@ function buildCardForObservation(observation) {
   var div = document.createElement('div');
   div.setAttribute('class', 'card');
   div.setAttribute('id', '60706122');
-  var img = cardImg(observation.uri);
+  var img = cardImg(observation.squareUrl);
   var body = cardBody(observation.name, observation.date, observation.uri, observation.wikipediaUrl);
   var icons = cardIcons(observation.isNative, observation.isIntroduced, observation.isThreatened, observation.isEndangered);
   div.appendChild(img);
@@ -238,10 +238,11 @@ function cardBody(name, date, uri, wikipediaUrl) {
   var textName = document.createTextNode(name);
   var h4 = document.createElement('h4');
   var secondA = document.createElement('a');
-  secondA.setAttribute('href', uri);
-  var textDate = document.createTextNode(date);
+  secondA.setAttribute('href', uri); 
+  // var textDate = document.createTextNode(date);
   firstA.appendChild(textName);
-  secondA.appendChild(textDate);
+  const time = createTime(date.toISOString().split("T")[0]); // .toLocaleDateString()
+  secondA.appendChild(time);
   h3.appendChild(firstA);
   h4.appendChild(secondA);
   div.appendChild(h3);
