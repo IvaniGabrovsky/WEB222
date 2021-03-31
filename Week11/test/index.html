@@ -33,7 +33,7 @@
 
 <body>
   <main>
-    <form>
+    <form method="POST" action="/registration" id="tform" name="reg">
       <div class="centered-block">
         <a href="https://login.target.com/gsp/static/v1/login/?client_id=ecom-web-1.0.0&ui_namespace=ui-default&back_button_action=browser&keep_me_signed_in=true&kmsi_default=false&actions=create_session_signin" tabindex="1"><img width="80px" hight="80px" src="target-logo.svg" alt="Target Logo"></a>
         <h1>Create your Target account</h1>
@@ -64,7 +64,7 @@
           To manage your marketing choices please access the Choice section 
           of the Target Privacy Policy or call Target Guest Relations.
         </p>
-        <input class="button" type="button" autocomplete="off" value="Create account"></input>
+        <input class="button" type="submit" autocomplete="off" value="Create account"></input>
         <a href="https://login.target.com/gsp/static/v1/login/?client_id=ecom-web-1.0.0&ui_namespace=ui-default&back_button_action=browser&keep_me_signed_in=true&kmsi_default=false&actions=create_session_signin">Original Page</a>
       </div>
     </form>
