@@ -125,7 +125,7 @@ function transformObservations(observations) {
       squareUrl:
         observation.taxon &&
         observation.taxon.default_photo &&
-        observation.taxon.default_photo.square_url,
+        observation.taxon.default_photo.medium_url,
     };
   });
 }
