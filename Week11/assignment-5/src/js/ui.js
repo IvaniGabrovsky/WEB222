@@ -214,7 +214,7 @@ function buildCardForObservation(observation) {
 function cardImg(url) {
   var div = document.createElement('div');
   div.setAttribute('class', 'card-img');
-  const styleValue = `background-image: url(background-image:,url(‘${url}’);`;
+  const styleValue = `background-image: url('${url}');`;
   div.setAttribute('style', styleValue);
   return div;
 }
