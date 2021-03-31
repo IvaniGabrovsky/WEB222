@@ -14,6 +14,11 @@ function addRowToTable(row) {
   rows.appendChild(row);
 }
 
+function addCardToGrid(card) {
+  var grid = document.querySelector("#observation-data");
+  grid.appendChild(card);
+}
+
 // Remove all content from the table body element with id=rows
 function clearAllTableRows() {
   var rows = document.querySelector("#rows");

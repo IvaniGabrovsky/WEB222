@@ -28,6 +28,21 @@ function updateTable(observations) {
   });
 }
 
+// Update the cards grid to show markers for the set of observations
+function updateCardsGrid(observations) {
+  // Remove any current data from the table
+  clearAllCards();
+
+  // Populate the table with all observation data we want to show
+  var card;
+  observations.forEach((observation) => {
+    // call the buildRowForObservation function with the current observation
+    card = buildCardForObservation(observation);
+    // and use that to add it to the table with the addRowToTable function.
+    addCardToGrid(card);
+  });
+}
+
 // Get all the observations from our data.js and format them so we can work with the data
 // supported values in speciesType: all, native and introduced
 function showSpeciesByType(speciesType) {
@@ -37,16 +52,17 @@ function showSpeciesByType(speciesType) {
 
   // Update the map and table
   updateMap(filteredObservations, map);
-  updateTable(filteredObservations);
+  // updateTable(filteredObservations);
+  updateCardsGrid(filteredObservations);
 
   if (speciesType === "native") {
-    updateTableTitle(`Only Native Species (${filteredObservations.length})`);
+    updateGridTitle(`Only Native Species (${filteredObservations.length})`);
   } else if (speciesType === "introduced") {
-    updateTableTitle(
+    updateGridTitle(
       `Only Introduced Species (${filteredObservations.length})`
     );
   } else {
-    updateTableTitle(`All Species (${filteredObservations.length})`);
+    updateGridTitle(`All Species (${filteredObservations.length})`);
   }
 }
 
