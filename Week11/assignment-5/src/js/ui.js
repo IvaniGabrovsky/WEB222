@@ -157,3 +157,99 @@ function buildRowForObservation(observation) {
   // 10. replace this with a return of the fully built row for this observation
   return row;
 }
+
+// *******************************************************
+// new card functions start here
+// *******************************************************
+
+/* 
+<div class="card" id="60706122">
+  card-img
+  card-body
+  card-icons
+</div>
+*/
+function buildCardForObservation(observation) {
+  var div = document.createElement('div');
+  div.setAttribute('class', 'card');
+  div.setAttribute('id', '60706122');
+  var img = cardImg(url);
+  var body = cardBody(name, date, uri, wikipediaUrl);
+  var icons = cardIcons(isNative, isIntroduced, isThreatened, isEndangered);
+  div.appendChild(img);
+  div.appendChild(body);
+  div.appendChild(icons);
+}
+
+/*
+<div
+ class="card-img"
+ style="background-image: url(background-image:,
+  url(‘https://inaturalist-opendata.s3.amazonaws.com/photos/10177220/medium.jpg?1545693877’);">
+</div>
+*/
+function cardImg(url) {
+  var div = document.createElement('div');
+  div.setAttribute('class', 'card-img');
+  const styleValue = `background-image: url(background-image:,url(‘${url}’);`;
+  div.setAttribute('style', styleValue);
+  return div;
+}
+
+/* 
+<div class="card-body">
+ <h3>
+  <a href="https://en.wikipedia.org/wiki/Campsis_radicans">American Trumpet Vine</a>
+ </h3>
+ <h4>
+  <a href="https://www.inaturalist.org/observations/60706122">9/25/2020</a>
+ </h4>
+</div>
+*/
+function cardBody(name, date, uri, wikipediaUrl) {
+  var div = document.createElement('div');
+  div.setAttribute('class', 'card-body');
+  var h3 = document.createElement('h3');
+  var firstA = document.createElement('a');
+  firstA.setAttribute('href', wikipediaUrl);
+  var textName = document.createTextNode(name);
+  var h4 = document.createElement('h4');
+  var secondA = document.createElement('a');
+  secondA.setAttribute('href', uri);
+  var textDate = document.createTextNode(date);
+  firstA.appendChild(textName);
+  secondA.appendChild(textDate);
+  h3.appendChild(firstA);
+  h4.appendChild(secondA);
+  div.appendChild(h3);
+  div.appendChild(h4);
+  return div;
+}
+
+/*
+<div class="card-icons">
+ <i class="fas fa-leaf" title="Native"></i>
+ <i class="fas fa-radiation-alt" title="Threatened"></i>
+</div>
+*/
+function cardIcons(isNative, isIntroduced, isThreatened, isEndangered){
+  var div = document.createElement('div');
+  var i = document.createElement('i');
+  if(isNative){
+  i.setAttribute('class', 'fas fa-leaf');
+  i.setAttribute('title', isNative);
+  }
+  else if(isIntroduced){
+    i.setAttribute('class', 'fas fa-frog');
+    i.setAttribute('title', isIntroduced);
+  }
+  else if(isThreatened){
+    i.setAttribute('class', 'fas fa-radiation-alt');
+    i.setAttribute('title', isThreatened);
+  }
+  else if(isEndangered){
+    i.setAttribute('class', 'fas fa-skull-crossbones');
+    i.setAttribute('title', isEndangered);
+  }
+  div.appendChild(i);
+}

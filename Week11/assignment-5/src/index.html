@@ -18,6 +18,7 @@
       href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href=" https://use.fontawesome.com/releases/v5.12.1/css/all.css" />
 
     <meta charset="utf-8" />
     <title>Web Wildlife Walk</title>
@@ -82,30 +83,22 @@
         <div id="map-container"></div>
       </section>
 
-      <!-- Data Table -->
+      <!-- Data Cards -->
       <section>
         <!-- This span needs to be populated at runtime with JavaScript -->
-        <h2 id="table-title">Wildlife Observations: <span></span></h2>
+        <h2 id="cards-title">Wildlife Observations: <span></span></h2>
         <div class="buttons">
           <button id="show-all">All Species</button>
           <button id="show-native">Only Native Species</button>
           <button id="show-introduced">Only Introduced Species</button>
         </div>
+        <div id=”legend”>
+          <span class="fas fa-leaf"></span>
+          <span class="fas fa-frog"></span>
+          <span class="fas fa-radiation-alt"></span>
+          <span class="fas fa-skull-crossbones"></span>
+        </div>
         <div id="observation-data">
-          <table>
-            <thead>
-              <tr>
-                <th>Photo</th>
-                <th>Date</th>
-                <th>Species</th>
-                <th>Endangered</th>
-                <th>Native</th>
-                <th>Threatened</th>
-                <th>Introduced</th>
-              </tr>
-            </thead>
-            <tbody id="rows"></tbody>
-          </table>
         </div>
       </section>
     </main>
