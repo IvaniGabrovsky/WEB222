@@ -8,13 +8,13 @@ function updateTableTitle(title) {
   tableTitle.appendChild(textNode);
 }
 
-function updateCardsTitle(title) {
-  var tableTitle = document.querySelector("#cards-title");
-  while (tableTitle.firstChild) {
-    tableTitle.removeChild(tableTitle.firstChild);
+function updateGridTitle(title) {
+  var gridTitle = document.querySelector("#grid-title");
+  while (gridTitle.firstChild) {
+    gridTitle.removeChild(gridTitle.firstChild);
   }
   var textNode = document.createTextNode(title);
-  tableTitle.appendChild(textNode);
+  gridTitle.appendChild(textNode);
 }
 
 // Add the given <tr>...</tr> element to the table body element with id=rows
