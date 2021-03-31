@@ -58,13 +58,21 @@ span{
 }
 
 .card{
-  /* margin: 10px; */
+ 
 }
 
 .card-img{
   width: 375px;
   height: 375px;
   background-repeat: no-repeat;
+}
+
+.card-body{
+
+}
+
+.card-icons{
+  
 }
 
 td {
