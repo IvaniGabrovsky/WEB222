@@ -86,7 +86,7 @@ h4{
 
 .card-body{
   margin: 0 15px;
-  padding: 15px 0;
+  padding: 10px 0;
   font-family: Arial, Helvetica, sans-serif;
 
 }
@@ -99,6 +99,7 @@ h4{
 
 .card-icons i{
   margin: 5px;
+  font-size: 1.2em;
 }
 
 .card-title{
