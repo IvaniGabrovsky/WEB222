@@ -243,7 +243,7 @@ function cardBody(name, date, uri, wikipediaUrl) {
   secondA.setAttribute('class', 'card-date');
   // var textDate = document.createTextNode(date);
   firstA.appendChild(textName);
-  const time = createTime(date.toISOString().split("T")[0]); // .toLocaleDateString()
+  const time = createTime(date.toLocaleDateString()); // .toLocaleDateString()
   secondA.appendChild(time);
   h3.appendChild(firstA);
   h4.appendChild(secondA);
