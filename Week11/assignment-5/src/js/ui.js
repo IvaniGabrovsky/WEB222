@@ -24,7 +24,7 @@ function addRowToTable(row) {
 }
 
 function addCardToGrid(card) {
-  var grid = document.querySelector("#observation-data");
+  var grid = document.querySelector("#observation-cards");
   grid.appendChild(card);
 }
 
@@ -36,9 +36,9 @@ function clearAllTableRows() {
   }
 }
 
-// Remove all content from the grid id=observation-data
+// Remove all content from the grid id=observation-cards
 function clearAllCards() {
-  var grid = document.querySelector("#observation-data");
+  var grid = document.querySelector("#observation-cards");
   while (grid.firstChild) {
     grid.removeChild(grid.firstChild);
   }
@@ -235,10 +235,12 @@ function cardBody(name, date, uri, wikipediaUrl) {
   var h3 = document.createElement('h3');
   var firstA = document.createElement('a');
   firstA.setAttribute('href', wikipediaUrl);
+  firstA.setAttribute('class', 'card-title');
   var textName = document.createTextNode(name);
   var h4 = document.createElement('h4');
   var secondA = document.createElement('a');
   secondA.setAttribute('href', uri); 
+  secondA.setAttribute('class', 'card-date');
   // var textDate = document.createTextNode(date);
   firstA.appendChild(textName);
   const time = createTime(date.toISOString().split("T")[0]); // .toLocaleDateString()
@@ -258,6 +260,7 @@ function cardBody(name, date, uri, wikipediaUrl) {
 */
 function cardIcons(isNative, isIntroduced, isThreatened, isEndangered){
   var div = document.createElement('div');
+  div.setAttribute('class', 'card-icons');
   var i = document.createElement('i');
   if(isNative){
   i.setAttribute('class', 'fas fa-leaf');

@@ -41,6 +41,7 @@
 }
 
 #legend{
+  margin-bottom: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -50,7 +51,15 @@ span{
   padding-right: 5px;
 }
 
-#observation-data{
+h3{
+  margin: 10px 0;
+}
+
+h4{
+  margin: 10px 0;
+}
+
+#observation-cards{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,21 +67,45 @@ span{
 }
 
 .card{
- 
+  height: 515px;
+  margin: 0 10px;
+  margin-bottom: 25px;
+  border-radius: 0.8%;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
+  0px 1px 1px 0px rgba(0,0,0,0.14),
+  0px 1px 3px 0px rgba(0,0,0,0.12);
 }
 
 .card-img{
   width: 375px;
   height: 375px;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-body{
+  margin: 0 15px;
+  padding: 15px 0;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
+
 .card-icons{
-  
+  margin: 0 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-title{
+  font-weight: bolder;
+  color:black;
+  font-size: 1.2em;
+}
+
+.card-date{
+  color:black;
 }
 
 td {
