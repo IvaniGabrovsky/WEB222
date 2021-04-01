@@ -184,66 +184,51 @@ function buildRowForObservation(observation) {
 // new card functions start here
 // *******************************************************
 
-/* 
-<div class="card" id="60706122">
-  card-img
-  card-body
-  card-icons
-</div>
-*/
 function buildCardForObservation(observation) {
-  var div = document.createElement('div');
-  div.setAttribute('class', 'card');
-  div.setAttribute('id', '60706122');
+  var div = document.createElement("div");
+  div.setAttribute("class", "card");
+  div.setAttribute("id", "60706122");
   var img = cardImg(observation.squareUrl);
-  var body = cardBody(observation.name, observation.date, observation.uri, observation.wikipediaUrl);
-  var icons = cardIcons(observation.isNative, observation.isIntroduced, observation.isThreatened, observation.isEndangered);
+  var body = cardBody(
+    observation.name,
+    observation.date,
+    observation.uri,
+    observation.wikipediaUrl
+  );
+  var icons = cardIcons(
+    observation.isNative,
+    observation.isIntroduced,
+    observation.isThreatened,
+    observation.isEndangered
+  );
   div.appendChild(img);
   div.appendChild(body);
   div.appendChild(icons);
   return div;
 }
 
-/*
-<div
- class="card-img"
- style="background-image: url(background-image:,
-  url(‘https://inaturalist-opendata.s3.amazonaws.com/photos/10177220/medium.jpg?1545693877’);">
-</div>
-*/
 function cardImg(url) {
-  var div = document.createElement('div');
-  div.setAttribute('class', 'card-img');
+  var div = document.createElement("div");
+  div.setAttribute("class", "card-img");
   const styleValue = `background-image: url('${url}');`;
-  div.setAttribute('style', styleValue);
+  div.setAttribute("style", styleValue);
   return div;
 }
 
-/* 
-<div class="card-body">
- <h3>
-  <a href="https://en.wikipedia.org/wiki/Campsis_radicans">American Trumpet Vine</a>
- </h3>
- <h4>
-  <a href="https://www.inaturalist.org/observations/60706122">9/25/2020</a>
- </h4>
-</div>
-*/
 function cardBody(name, date, uri, wikipediaUrl) {
-  var div = document.createElement('div');
-  div.setAttribute('class', 'card-body');
-  var h3 = document.createElement('h3');
-  var firstA = document.createElement('a');
-  firstA.setAttribute('href', wikipediaUrl);
-  firstA.setAttribute('class', 'card-title');
+  var div = document.createElement("div");
+  div.setAttribute("class", "card-body");
+  var h3 = document.createElement("h3");
+  var firstA = document.createElement("a");
+  firstA.setAttribute("href", wikipediaUrl);
+  firstA.setAttribute("class", "card-title");
   var textName = document.createTextNode(name);
-  var h4 = document.createElement('h4');
-  var secondA = document.createElement('a');
-  secondA.setAttribute('href', uri); 
-  secondA.setAttribute('class', 'card-date');
-  // var textDate = document.createTextNode(date);
+  var h4 = document.createElement("h4");
+  var secondA = document.createElement("a");
+  secondA.setAttribute("href", uri);
+  secondA.setAttribute("class", "card-date");
   firstA.appendChild(textName);
-  const time = createTime(date.toLocaleDateString()); // .toLocaleDateString()
+  const time = createTime(date.toLocaleDateString());
   secondA.appendChild(time);
   h3.appendChild(firstA);
   h4.appendChild(secondA);
@@ -252,31 +237,22 @@ function cardBody(name, date, uri, wikipediaUrl) {
   return div;
 }
 
-/*
-<div class="card-icons">
- <i class="fas fa-leaf" title="Native"></i>
- <i class="fas fa-radiation-alt" title="Threatened"></i>
-</div>
-*/
-function cardIcons(isNative, isIntroduced, isThreatened, isEndangered){
-  var div = document.createElement('div');
-  div.setAttribute('class', 'card-icons');
-  var i = document.createElement('i');
-  if(isNative){
-  i.setAttribute('class', 'fas fa-leaf');
-  i.setAttribute('title', isNative);
-  }
-  else if(isIntroduced){
-    i.setAttribute('class', 'fas fa-frog');
-    i.setAttribute('title', isIntroduced);
-  }
-  else if(isThreatened){
-    i.setAttribute('class', 'fas fa-radiation-alt');
-    i.setAttribute('title', isThreatened);
-  }
-  else if(isEndangered){
-    i.setAttribute('class', 'fas fa-skull-crossbones');
-    i.setAttribute('title', isEndangered);
+function cardIcons(isNative, isIntroduced, isThreatened, isEndangered) {
+  var div = document.createElement("div");
+  div.setAttribute("class", "card-icons");
+  var i = document.createElement("i");
+  if (isNative) {
+    i.setAttribute("class", "fas fa-leaf");
+    i.setAttribute("title", isNative);
+  } else if (isIntroduced) {
+    i.setAttribute("class", "fas fa-frog");
+    i.setAttribute("title", isIntroduced);
+  } else if (isThreatened) {
+    i.setAttribute("class", "fas fa-radiation-alt");
+    i.setAttribute("title", isThreatened);
+  } else if (isEndangered) {
+    i.setAttribute("class", "fas fa-skull-crossbones");
+    i.setAttribute("title", isEndangered);
   }
   div.appendChild(i);
   return div;

@@ -40,43 +40,42 @@
   background-color: lightblue;
 }
 
-#legend{
+#legend {
   margin-bottom: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-span{
+span {
   padding-right: 5px;
 }
 
-h3{
+h3 {
   margin: 10px 0;
 }
 
-h4{
+h4 {
   margin: 10px 0;
 }
 
-#observation-cards{
+#observation-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.card{
+.card {
   height: 515px;
   margin: 0 10px;
   margin-bottom: 25px;
   border-radius: 0.8%;
-  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
-  0px 1px 1px 0px rgba(0,0,0,0.14),
-  0px 1px 3px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
-.card-img{
+.card-img {
   width: 375px;
   height: 375px;
   background-position: 50% 50%;
@@ -84,32 +83,31 @@ h4{
   background-size: cover;
 }
 
-.card-body{
+.card-body {
   margin: 0 15px;
   padding: 10px 0;
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
-.card-icons{
+.card-icons {
   margin: 0 15px;
   display: flex;
   justify-content: flex-end;
 }
 
-.card-icons i{
+.card-icons i {
   margin: 5px;
   font-size: 1.2em;
 }
 
-.card-title{
+.card-title {
   font-weight: bolder;
-  color:black;
+  color: black;
   font-size: 1.2em;
 }
 
-.card-date{
-  color:black;
+.card-date {
+  color: black;
 }
 
 td {

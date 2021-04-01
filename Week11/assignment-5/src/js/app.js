@@ -58,9 +58,7 @@ function showSpeciesByType(speciesType) {
   if (speciesType === "native") {
     updateGridTitle(`Only Native Species (${filteredObservations.length})`);
   } else if (speciesType === "introduced") {
-    updateGridTitle(
-      `Only Introduced Species (${filteredObservations.length})`
-    );
+    updateGridTitle(`Only Introduced Species (${filteredObservations.length})`);
   } else {
     updateGridTitle(`All Species (${filteredObservations.length})`);
   }
