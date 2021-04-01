@@ -91,11 +91,14 @@ h4{
 
 }
 
-
 .card-icons{
   margin: 0 15px;
   display: flex;
   justify-content: flex-end;
+}
+
+.card-icons i{
+  margin: 5px;
 }
 
 .card-title{
