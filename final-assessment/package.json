@@ -9,7 +9,7 @@
     "prepare-submission": "run-s -n -c prettier mkdir copy-src zip",
     "prezip": "rimraf submission.zip",
     "zip": "bestzip submission.zip submission/*",
-    "start": "live-server src"
+    "start": "live-server --port=3000 src"
   },
   "license": "BSD-2-Clause",
   "devDependencies": {
