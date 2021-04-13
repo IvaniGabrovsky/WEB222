@@ -57,6 +57,48 @@
         <p><span class="required">*</span> Required field</p>
         <form>
           <!-- TODO: create the form based on the specification in the Final Assessment -->
+          <fieldset>
+            <legend>Observation</legend>
+            <label for="name">Species Guess<span class="required">*</span></label>
+            <input id="name" type="text" name="name" size="25" maxlength="200" placeholder="Great Horned Owl">
+            <label for="description">Description<span class="required">*</span></label>
+            <input id="description" type="text" name="description" size="75" placeholder="Roosting on fence post at the edge of field">
+            <label class="date_observed" for="date_observed">Date Observed<span class="required">*</span></label>
+            <input type="date" class="date_observed" id="date_observed" name="date_observed" placeholder="yyyy-mm-dd" >
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" placeholder="Notes about observation" rows='3'></textarea>     
+          </fieldset>
+
+          <fieldset>
+            <legend>Location</legend>
+            <label for="latitute">Latitute<span class="required">*</span></label>
+            <input id="latitute" type="number" name="latitute" size="25" placeholder="43.7955">
+            <label for="longitude">Longitude<span class="required">*</span></label>
+            <input id="longitude" type="number" name="longitude" size="25" placeholder="-79.3496">
+            <input id="save_location" type="checkbox" name="save_location">
+            <label for="description">Share Location Information (i.e., it's ok to make this public) </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Photo</legend>
+            <label for="photographer_name">Photographer Name</label>
+            <input id="photographer_name" type="text" name="photographer_name" size="75" maxlength="100" placeholder="Karen Shu">
+            <label for="photographer_email">Species Guess</label>
+            <input id="photographer_email" type="text" name="photographer_email" size="75" placeholder="kshu@photos.com">
+            <label for="photo">Photo</label>
+            <input id="photo" type="file" name="photo">
+            <label for="license">License (<a href="https://creativecommons.org/choose/">help on choosing a license</a>)</label>
+            <select class="license_type" id="license">
+              <option value="1" selected="selected">Creative Commons Attribution License</option>
+              <option value="2" selected="selected">Creative Commons Attribution-NonCommercial License</option>
+              <option value="3" selected="selected">Creative Commons Attribution-ShareAlike License</option>
+              <option value="4" selected="selected">Creative Commons Attribution-NoDerivs License</option>
+              <option value="5" selected="selected">Creative Commons Attribution-NonCommercial-ShareAlike License</option>
+              <option value="6" selected="selected">Creative Commons Attribution-NonCommercial-NoDerivs License</option>
+            </select>
+          </fieldset>
+
+          <button id="submit">Submit</button>
         </form>
       </section>
     </main>
