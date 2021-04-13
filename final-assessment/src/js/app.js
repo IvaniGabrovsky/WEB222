@@ -79,8 +79,10 @@ function start() {
     event.preventDefault();
 
     // TODO - get the value from the search form input and pass it to the
+    const searchValue = document.getElementById('search-text').value;
+    searchValue && search(searchValue);
     // search() function (already defined in js/search.js)
-    console.log('TODO - call search() function with value from search form');
+    // console.log('TODO - call search() function with value from search form:', searchValue);
   };
 
   // Show all observations at first

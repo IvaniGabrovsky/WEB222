@@ -105,5 +105,25 @@ function toggleLoading(isLoading) {
   // Finally, we need to disable the button, so the user doesn't click it multiple
   // times (i.e., we need to wait until the loading finishes).  We decide what to
   // do based on the value of the isLoading argument.
-  console.log('TODO - toggle the state of the Search button to/from Loading');
+  // console.log('TODO - toggle the state of the Search button to/from Loading');
+  const button = document.getElementById('search-btn');
+  while (button.firstChild) {
+    button.removeChild(button.firstChild);
+  }
+  if(!isLoading){
+    var iElement = document.createElement('i');
+    iElement.setAttribute('class', 'fas fa-search');
+    const text = document.createTextNode(' Search');
+    button.appendChild(iElement);
+    button.appendChild(text);
+    button.disabled = false;
+  }
+  else{
+    var iElement = document.createElement('i');
+    iElement.setAttribute('class', 'fas fa-hourglass-half');
+    const text = document.createTextNode(' Loading...');
+    button.appendChild(iElement);
+    button.appendChild(text);
+    button.disabled = true;
+  }
 }
