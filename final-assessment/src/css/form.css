@@ -1,3 +1,7 @@
 /**
  * Styles for the add-observation.html page 
  */
+ .search-block{
+    display: flex;
+    flex-direction: row;
+ }
