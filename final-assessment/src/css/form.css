@@ -2,14 +2,14 @@
  * Styles for the add-observation.html page 
  */
 
- .required{
-    color: red;
- }
+.required {
+  color: red;
+}
 
- #latitute-invalid{
-   color: red;
- }
+#latitute-invalid {
+  color: red;
+}
 
- #longitude-invalid{
-   color: red;
- }
+#longitude-invalid {
+  color: red;
+}
