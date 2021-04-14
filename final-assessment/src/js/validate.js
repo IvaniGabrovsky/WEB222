@@ -5,6 +5,12 @@ function validate(event) {
   // invalid, show the appropriate error message in the form, and stop the 
   // form from being submitted. If both values are valid, allow the form to be
   // submitted.
+  if(latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180){
+    event.onload
+  }
+  else{
+    xhr.open("GET", "http://example.com");
+  }
   console.log('TODO - validate the longitude, latitude values before submitting');
 }
 
