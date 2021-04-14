@@ -55,7 +55,7 @@
       <section>
         <h2>Observation Details</h2>
         <p><span class="required">*</span> Required field</p>
-        <form>
+        <form action="https://formspree.io/f/mbjqjnzp" method="POST">
           <!-- TODO: create the form based on the specification in the Final Assessment -->
           <fieldset>
             <legend>Observation</legend>
@@ -71,9 +71,9 @@
 
           <fieldset>
             <legend>Location</legend>
-            <label for="latitute">Latitute<span class="required">*</span></label>
+            <label id="latitute-label" for="latitute">Latitute<span class="required">* must be a valid Latitude (-90 to 90)</span></label>
             <input id="latitute" type="number" name="latitute" size="25" placeholder="43.7955">
-            <label for="longitude">Longitude<span class="required">*</span></label>
+            <label id="latitute-label" for="longitude">Longitude<span class="required">* must be a valid Longitude (-180 to 180)</span></label>
             <input id="longitude" type="number" name="longitude" size="25" placeholder="-79.3496">
             <input id="save_location" type="checkbox" name="save_location">
             <label for="description">Share Location Information (i.e., it's ok to make this public) </label>

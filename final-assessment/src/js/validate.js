@@ -13,10 +13,12 @@ function validate(event) {
     event.preventDefault();
     if (!latitudeValid) {
       // show error for latitude
+      document.getElementById('label');
       console.log('Invalid latitude');
     }
     if (!longitudeValid) {
       // show error for longitude
+      document.getElementById('label');
       console.log('Invalid longitude');
     }
     return false;

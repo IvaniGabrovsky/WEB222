@@ -13,3 +13,15 @@
  #search-text{
     width:100%;
  }
+
+ .required{
+    color: red;
+ }
+
+ #latitute-label label span{
+   color: red;
+ }
+
+ #latitute-label label span{
+   color: red;
+ }
