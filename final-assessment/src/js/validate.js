@@ -40,11 +40,23 @@ function validate(event) {
 
   // Description validation
   const description = document.getElementById('description').value;
-
+  let descriptionInvalidMessage = document.getElementById('description-invalid');
+  if (!description) {
+    event.preventDefault();
+    descriptionInvalidMessage.removeAttribute('hidden');
+  } else {
+    descriptionInvalidMessage.setAttribute('hidden', 'true');
+  }
 
   // date_observed validation
   const date_observed = document.getElementById('date_observed').value;
-  
+  let dateObservedInvalidMessage = document.getElementById('date-invalid');
+  if (!date_observed) {
+    event.preventDefault();
+    dateObservedInvalidMessage.removeAttribute('hidden');
+  } else {
+    dateObservedInvalidMessage.setAttribute('hidden', 'true');
+  }
   
   if(latitudeValid && longitudeValid && name && description && date_observed){
     return true;

@@ -55,13 +55,21 @@
           <label for="name">
             Species Guess
             <span class="required">*</span>
-            <span class="required" id="name-invalid" hidden>Please provide Species Guess</span>
+            <span class="required" id="name-invalid" hidden>Please provide species guess</span>
           </label>
           <input id="name" type="text" name="name" size="25" maxlength="200" placeholder="Great Horned Owl">
-          <label for="description">Description<span class="required">*</span></label>
+          <label for="description">
+            Description
+            <span class="required">*</span>
+            <span class="required" id="description-invalid" hidden>Please provide description</span>
+          </label>
           <input id="description" type="text" name="description" size="75"
             placeholder="Roosting on fence post at the edge of field">
-          <label class="date_observed" for="date_observed">Date Observed<span class="required">*</span></label>
+          <label class="date_observed" for="date_observed">
+            Date Observed
+            <span class="required">*</span>
+            <span class="required" id="date-invalid" hidden>Please provide date observed</span>
+          </label>
           <input type="date" class="date_observed" id="date_observed" name="date_observed" placeholder="yyyy-mm-dd">
           <label for="notes">Notes</label>
           <textarea id="notes" name="notes" placeholder="Notes about observation" rows='3'></textarea>
