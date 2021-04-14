@@ -1,116 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Web Wildlife Walk v3.0</title>
 
-    <meta name="description" content="WEB222 Wildlife Assignment" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8" />
+  <title>Web Wildlife Walk v3.0</title>
 
-    <!-- Favicon from https://www.favicon.cc/?action=icon&file_id=716323 -->
-    <link
-      href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDGCmTAzQpkwMZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkwMJqZMDGKmTAzspkwM/6ZMDPmmTAwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmTAxMpkwMz6ZMDPimTAz6pkwM/6ZMDP+mTAz/pkwMHKZMDBymTAwUAAAAAAAAAAAAAAAAAAAAAAAAAACmTAyQpkwM/aZMDP+mTAz/pkwM/6ZMDP+mTAz/pkwM/KZMDDSmTAzlpkwM/6ZMDL2mTAwLAAAAAAAAAAAAAAAApkwMiKZMDP+mTAz/pkwM/6ZMDP+mTAz/pkwM/6ZMDNumTAwhpkwM/qZMDP+mTAz/pkwMigAAAAAAAAAAAAAAAKZMDASmTAyOpkwM/6ZMDP+mTAz/pkwM/6ZMDP+mTAyLpkwMAaZMDKSmTAz/pkwM/6ZMDLYAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDDSmTAyvpkwM4aZMDOymTAzdpkwMQKZMDAOmTAwJpkwMPqZMDHqmTAwgAAAAAAAAAAAAAAAAAAAAAKZMDEemTAzJpkwMUKZMDBWmTAwjpkwMFgAAAACmTAxjpkwM0KZMDJCmTAwHAAAAAAAAAAAAAAAAAAAAAAAAAACmTAympkwM/6ZMDPOmTAwKpkwMI6ZMDDYAAAAApkwMw6ZMDP+mTAz/pkwMuaZMDAIAAAAAAAAAAAAAAAAAAAAApkwM1KZMDP+mTAz/pkwMHaZMDJemTAz2pkwMiqZMDFymTAz/pkwM/6ZMDP+mTAxQAAAAAAAAAAAAAAAAAAAAAKZMDKmmTAz/pkwM3KZMDBOmTAzFpkwM/6ZMDP2mTAwnpkwMn6ZMDP6mTAz/pkwMbwAAAAAAAAAAAAAAAAAAAACmTAwepkwMyqZMDH6mTAwCpkwMtaZMDP+mTAz/pkwMgwAAAACmTAwmpkwMUqZMDAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDE2mTAz/pkwM/6ZMDG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmTAwBpkwMeKZMDLGmTAwFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP9/AAD+PwAA8D8AAMAjAADAIQAA4CEAAPh/AAD35wAA48MAAOIjAADiIwAA9h8AAP8/AAD/vwAA//8AAA=="
-      rel="icon"
-      type="image/x-icon"
-    />
+  <meta name="description" content="WEB222 Wildlife Assignment" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Normalize CSS across browsers -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/normalize.css@8.0.1/normalize.css"
-    />
+  <!-- Favicon from https://www.favicon.cc/?action=icon&file_id=716323 -->
+  <link
+    href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDGCmTAzQpkwMZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkwMJqZMDGKmTAzspkwM/6ZMDPmmTAwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmTAxMpkwMz6ZMDPimTAz6pkwM/6ZMDP+mTAz/pkwMHKZMDBymTAwUAAAAAAAAAAAAAAAAAAAAAAAAAACmTAyQpkwM/aZMDP+mTAz/pkwM/6ZMDP+mTAz/pkwM/KZMDDSmTAzlpkwM/6ZMDL2mTAwLAAAAAAAAAAAAAAAApkwMiKZMDP+mTAz/pkwM/6ZMDP+mTAz/pkwM/6ZMDNumTAwhpkwM/qZMDP+mTAz/pkwMigAAAAAAAAAAAAAAAKZMDASmTAyOpkwM/6ZMDP+mTAz/pkwM/6ZMDP+mTAyLpkwMAaZMDKSmTAz/pkwM/6ZMDLYAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDDSmTAyvpkwM4aZMDOymTAzdpkwMQKZMDAOmTAwJpkwMPqZMDHqmTAwgAAAAAAAAAAAAAAAAAAAAAKZMDEemTAzJpkwMUKZMDBWmTAwjpkwMFgAAAACmTAxjpkwM0KZMDJCmTAwHAAAAAAAAAAAAAAAAAAAAAAAAAACmTAympkwM/6ZMDPOmTAwKpkwMI6ZMDDYAAAAApkwMw6ZMDP+mTAz/pkwMuaZMDAIAAAAAAAAAAAAAAAAAAAAApkwM1KZMDP+mTAz/pkwMHaZMDJemTAz2pkwMiqZMDFymTAz/pkwM/6ZMDP+mTAxQAAAAAAAAAAAAAAAAAAAAAKZMDKmmTAz/pkwM3KZMDBOmTAzFpkwM/6ZMDP2mTAwnpkwMn6ZMDP6mTAz/pkwMbwAAAAAAAAAAAAAAAAAAAACmTAwepkwMyqZMDH6mTAwCpkwMtaZMDP+mTAz/pkwMgwAAAACmTAwmpkwMUqZMDAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZMDE2mTAz/pkwM/6ZMDG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmTAwBpkwMeKZMDLGmTAwFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP9/AAD+PwAA8D8AAMAjAADAIQAA4CEAAPh/AAD35wAA48MAAOIjAADiIwAA9h8AAP8/AAD/vwAA//8AAA=="
+    rel="icon" type="image/x-icon" />
 
-    <!-- Water CSS theme, see https://watercss.kognise.dev/ -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css"
-    />
+  <!-- Normalize CSS across browsers -->
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <!-- Water CSS theme, see https://watercss.kognise.dev/ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css" />
 
-    <!-- Our site's styles -->
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/form.css">
-  </head>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 
-  <body>
-    <header>
-      <nav>
-        <a href="/"><i class="fas fa-home"></i> Home</a>
-        <a href="add-observation.html"><i class="fas fa-plus"></i> Add Observation</a>
-      </nav>
+  <!-- Our site's styles -->
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/form.css">
+</head>
 
-      <h1>Web Wildlife Walk v3.0</h1>
-    
-      <h2>Adding New Observations</h2>
-      <p>
-        The data used on this web site is generated by volunteers like you who love
-        nature and want to share it. You can improve the database of wildlife information
-        simply by adding your own observations!
-      </p>
-    </header>
+<body>
+  <header>
+    <nav>
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="add-observation.html"><i class="fas fa-plus"></i> Add Observation</a>
+    </nav>
 
-    <main>
-      <section>
-        <h2>Observation Details</h2>
-        <p><span class="required">*</span> Required field</p>
-        <form action="https://formspree.io/f/mbjqjnzp" method="POST">
-          <!-- TODO: create the form based on the specification in the Final Assessment -->
-          <fieldset>
-            <legend>Observation</legend>
-            <label for="name">Species Guess<span class="required">*</span></label>
-            <input id="name" type="text" name="name" size="25" maxlength="200" placeholder="Great Horned Owl">
-            <label for="description">Description<span class="required">*</span></label>
-            <input id="description" type="text" name="description" size="75" placeholder="Roosting on fence post at the edge of field">
-            <label class="date_observed" for="date_observed">Date Observed<span class="required">*</span></label>
-            <input type="date" class="date_observed" id="date_observed" name="date_observed" placeholder="yyyy-mm-dd" >
-            <label for="notes">Notes</label>
-            <textarea id="notes" name="notes" placeholder="Notes about observation" rows='3'></textarea>     
-          </fieldset>
+    <h1>Web Wildlife Walk v3.0</h1>
 
-          <fieldset>
-            <legend>Location</legend>
-            <label id="latitute-label" for="latitute">
-              Latitute
-              <span class="required">* </span>
-              <span class="required" id="latitute-invalid" hidden>must be a valid Latitude (-90 to 90)</span>
-            </label>
-            <input id="latitute" type="number" name="latitute" size="25" placeholder="43.7955">
-            <label id="latitute-label" for="longitude">
-              Longitude
-              <span class="required">* </span>
-              <span class="required" id="longitude-invalid" hidden>must be a valid Longitude (-180 to 180)</span>
-            </label>
-            <input id="longitude" type="number" name="longitude" size="25" placeholder="-79.3496">
-            <input id="save_location" type="checkbox" name="save_location">
-            <label for="description">Share Location Information (i.e., it's ok to make this public) </label>
-          </fieldset>
+    <h2>Adding New Observations</h2>
+    <p>
+      The data used on this web site is generated by volunteers like you who love
+      nature and want to share it. You can improve the database of wildlife information
+      simply by adding your own observations!
+    </p>
+  </header>
 
-          <fieldset>
-            <legend>Photo</legend>
-            <label for="photographer_name">Photographer Name</label>
-            <input id="photographer_name" type="text" name="photographer_name" size="75" maxlength="100" placeholder="Karen Shu">
-            <label for="photographer_email">Species Guess</label>
-            <input id="photographer_email" type="text" name="photographer_email" size="75" placeholder="kshu@photos.com">
-            <label for="photo">Photo</label>
-            <input id="photo" type="file" name="photo">
-            <label for="license">License (<a href="https://creativecommons.org/choose/">help on choosing a license</a>)</label>
-            <select class="license_type" id="license">
-              <option value="1" selected="selected">Creative Commons Attribution License</option>
-              <option value="2" selected="selected">Creative Commons Attribution-NonCommercial License</option>
-              <option value="3" selected="selected">Creative Commons Attribution-ShareAlike License</option>
-              <option value="4" selected="selected">Creative Commons Attribution-NoDerivs License</option>
-              <option value="5" selected="selected">Creative Commons Attribution-NonCommercial-ShareAlike License</option>
-              <option value="6" selected="selected">Creative Commons Attribution-NonCommercial-NoDerivs License</option>
-            </select>
-          </fieldset>
+  <main>
+    <section>
+      <h2>Observation Details</h2>
+      <p><span class="required">*</span> Required field</p>
+      <form action="https://formspree.io/f/mbjqjnzp" method="POST">
+        <!-- TODO: create the form based on the specification in the Final Assessment -->
+        <fieldset>
+          <legend>Observation</legend>
+          <label for="name">
+            Species Guess
+            <span class="required">*</span>
+            <span class="required" id="name-invalid" hidden>Please provide Species Guess</span>
+          </label>
+          <input id="name" type="text" name="name" size="25" maxlength="200" placeholder="Great Horned Owl">
+          <label for="description">Description<span class="required">*</span></label>
+          <input id="description" type="text" name="description" size="75"
+            placeholder="Roosting on fence post at the edge of field">
+          <label class="date_observed" for="date_observed">Date Observed<span class="required">*</span></label>
+          <input type="date" class="date_observed" id="date_observed" name="date_observed" placeholder="yyyy-mm-dd">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" placeholder="Notes about observation" rows='3'></textarea>
+        </fieldset>
 
-          <button id="submit">Submit</button>
-        </form>
-      </section>
-    </main>
-    <!-- Your custom form validation code goes in the file js/validate.js -->
-    <script src="js/validate.js"></script>
-  </body>
+        <fieldset>
+          <legend>Location</legend>
+          <label id="latitute-label" for="latitute">
+            Latitute
+            <span class="required">* </span>
+            <span class="required" id="latitute-invalid" hidden>must be a valid Latitude (-90 to 90)</span>
+          </label>
+          <input id="latitute" type="number" name="latitute" size="25" placeholder="43.7955">
+          <label id="latitute-label" for="longitude">
+            Longitude
+            <span class="required">* </span>
+            <span class="required" id="longitude-invalid" hidden>must be a valid Longitude (-180 to 180)</span>
+          </label>
+          <input id="longitude" type="number" name="longitude" size="25" placeholder="-79.3496">
+          <input id="save_location" type="checkbox" name="save_location">
+          <label for="description">Share Location Information (i.e., it's ok to make this public) </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Photo</legend>
+          <label for="photographer_name">Photographer Name</label>
+          <input id="photographer_name" type="text" name="photographer_name" size="75" maxlength="100"
+            placeholder="Karen Shu">
+          <label for="photographer_email">Species Guess</label>
+          <input id="photographer_email" type="text" name="photographer_email" size="75" placeholder="kshu@photos.com">
+          <label for="photo">Photo</label>
+          <input id="photo" type="file" name="photo">
+          <label for="license">License (<a href="https://creativecommons.org/choose/">help on choosing a
+              license</a>)</label>
+          <select class="license_type" id="license">
+            <option value="1" selected="selected">Creative Commons Attribution License</option>
+            <option value="2" selected="selected">Creative Commons Attribution-NonCommercial License</option>
+            <option value="3" selected="selected">Creative Commons Attribution-ShareAlike License</option>
+            <option value="4" selected="selected">Creative Commons Attribution-NoDerivs License</option>
+            <option value="5" selected="selected">Creative Commons Attribution-NonCommercial-ShareAlike License</option>
+            <option value="6" selected="selected">Creative Commons Attribution-NonCommercial-NoDerivs License</option>
+          </select>
+        </fieldset>
+
+        <button id="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+  <!-- Your custom form validation code goes in the file js/validate.js -->
+  <script src="js/validate.js"></script>
+</body>
+
 </html>

@@ -5,11 +5,10 @@ function validate(event) {
   // invalid, show the appropriate error message in the form, and stop the 
   // form from being submitted. If both values are valid, allow the form to be
   // submitted.
-  const latitude = document.getElementById('latitute').value;
-  const longitude = document.getElementById('longitude').value;
-  const latitudeValid = latitude && (latitude >= -90 || latitude <= 90);
-  const longitudeValid = longitude && (longitude >= -180 || longitude <= 180);
   
+  // Latitute validation
+  const latitude = document.getElementById('latitute').value;
+  const latitudeValid = latitude && (latitude >= -90 || latitude <= 90);
   let latInvalidMessage = document.getElementById('latitute-invalid');
   if (!latitudeValid) {
     event.preventDefault();
@@ -18,6 +17,9 @@ function validate(event) {
     latInvalidMessage.setAttribute('hidden', 'true');
   }
   
+  // Longitude Validation
+  const longitude = document.getElementById('longitude').value;
+  const longitudeValid = longitude && (longitude >= -180 || longitude <= 180);
   let lonInvalidMessage = document.getElementById('longitude-invalid');
   if (!longitudeValid) {
     event.preventDefault();
@@ -26,8 +28,21 @@ function validate(event) {
     lonInvalidMessage.setAttribute('hidden', 'true');
   }
   
+  // Name validation
   const name = document.getElementById('name').value;
+  let nameInvalidMessage = document.getElementById('name-invalid');
+  if (!name) {
+    event.preventDefault();
+    nameInvalidMessage.removeAttribute('hidden');
+  } else {
+    nameInvalidMessage.setAttribute('hidden', 'true');
+  }
+
+  // Description validation
   const description = document.getElementById('description').value;
+
+
+  // date_observed validation
   const date_observed = document.getElementById('date_observed').value;
   
   
