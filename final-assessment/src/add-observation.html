@@ -71,9 +71,17 @@
 
           <fieldset>
             <legend>Location</legend>
-            <label id="latitute-label" for="latitute">Latitute<span class="required">* must be a valid Latitude (-90 to 90)</span></label>
+            <label id="latitute-label" for="latitute">
+              Latitute
+              <span class="required">* </span>
+              <span class="required" id="latitute-invalid" hidden>must be a valid Latitude (-90 to 90)</span>
+            </label>
             <input id="latitute" type="number" name="latitute" size="25" placeholder="43.7955">
-            <label id="latitute-label" for="longitude">Longitude<span class="required">* must be a valid Longitude (-180 to 180)</span></label>
+            <label id="latitute-label" for="longitude">
+              Longitude
+              <span class="required">* </span>
+              <span class="required" id="longitude-invalid" hidden>must be a valid Longitude (-180 to 180)</span>
+            </label>
             <input id="longitude" type="number" name="longitude" size="25" placeholder="-79.3496">
             <input id="save_location" type="checkbox" name="save_location">
             <label for="description">Share Location Information (i.e., it's ok to make this public) </label>

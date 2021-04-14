@@ -9,23 +9,35 @@ function validate(event) {
   const longitude = document.getElementById('longitude').value;
   const latitudeValid = latitude && (latitude >= -90 || latitude <= 90);
   const longitudeValid = longitude && (longitude >= -180 || longitude <= 180);
-  if(!latitudeValid || !longitudeValid){
+  
+  let latInvalidMessage = document.getElementById('latitute-invalid');
+  if (!latitudeValid) {
     event.preventDefault();
-    if (!latitudeValid) {
-      // show error for latitude
-      document.getElementById('label');
-      console.log('Invalid latitude');
-    }
-    if (!longitudeValid) {
-      // show error for longitude
-      document.getElementById('label');
-      console.log('Invalid longitude');
-    }
-    return false;
-  } else {
-    console.log('Form is valid. Submit to formspree.io');
-    console.log('latitude=', latitude);
+    latInvalidMessage.removeAttribute('hidden');
+  } else{
+    latInvalidMessage.setAttribute('hidden', 'true');
+  }
+  
+  let lonInvalidMessage = document.getElementById('longitude-invalid');
+  if (!longitudeValid) {
+    event.preventDefault();
+    lonInvalidMessage.removeAttribute('hidden');
+  } else{
+    lonInvalidMessage.setAttribute('hidden', 'true');
+  }
+  
+  const name = document.getElementById('name').value;
+  const description = document.getElementById('description').value;
+  const date_observed = document.getElementById('date_observed').value;
+  
+  
+  if(latitudeValid && longitudeValid && name && description && date_observed){
     return true;
+  } else{
+    event.preventDefault();
+    console.log("invalid form");
+    //alert('Please fill all required fields with valid data');
+    return false;
   }
 }
 

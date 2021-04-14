@@ -121,3 +121,17 @@ footer {
 /**
  * TODO: style the Search Form
  */
+
+ .search-block{
+  display: flex;
+  flex-direction: row;
+}
+
+.search-button{
+  font-size: 1.2em;
+  min-width: 180px;
+}
+
+#search-text{
+  width:100%;
+}

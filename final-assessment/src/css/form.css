@@ -1,27 +1,15 @@
 /**
  * Styles for the add-observation.html page 
  */
- .search-block{
-    display: flex;
-    flex-direction: row;
- }
-
- .search-button{
-     min-width: 150px;
- }
-
- #search-text{
-    width:100%;
- }
 
  .required{
     color: red;
  }
 
- #latitute-label label span{
+ #latitute-invalid{
    color: red;
  }
 
- #latitute-label label span{
+ #longitude-invalid{
    color: red;
  }
